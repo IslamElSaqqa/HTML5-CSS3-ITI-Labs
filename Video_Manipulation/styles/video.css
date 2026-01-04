@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+video {
+    width: 500px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.controls button,
+.controls input {
+    margin-right: 5px;
+}
