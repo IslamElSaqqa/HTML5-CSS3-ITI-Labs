@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5&CSS3</title>
+</head>
+<body>
+        <h1>Share Live Location</h1>
+        <p id="error-message"></p>
+        <iframe 
+            id="location" 
+            width="100%"
+            height="400"
+            style="display:none; border:0;">
+        </iframe>
+
+        <button  onclick="getLoc()">share Location</button>
+        <button  onclick="clearPosition()">Clear Postion</button>
+    </body>
+    <script src="./share-live-location.js"></script>
+</html>
