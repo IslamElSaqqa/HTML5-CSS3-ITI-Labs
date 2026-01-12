@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s ease;
+}
+
+body:has(.blink-button:hover) {
+    animation: backgroundBlink 0.8s ease-in-out infinite;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blink-button {
+    padding: 15px 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background: linear-gradient(135deg, #e3f2ff, #f0e6ff);
+    border: 2px solid #6699ff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 153, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.blink-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blink-button:hover {
+    animation: blinkAnimation 0.8s ease-in-out infinite;
+    box-shadow: 0 6px 25px rgba(255, 102, 204, 0.5);
+}
+
+.blink-button:hover::before {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes blinkAnimation {
+    0% {
+        background: linear-gradient(135deg, #e3f2ff, #f0e6ff);
+        border-color: #6699ff;
+    }
+    50% {
+        background: linear-gradient(135deg, #ffe3f0, #fff0f5);
+        border-color: #ff66cc;
+        transform: scale(1.05);
+    }
+    100% {
+        background: linear-gradient(135deg, #e3f2ff, #f0e6ff);
+        border-color: #6699ff;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(50%, 50%) rotate(360deg);
+    }
+}
+
+@keyframes backgroundBlink {
+    0% {
+        background-color: #f5f5f5;
+    }
+    50% {
+        background-color: #e6f3ff;
+    }
+    100% {
+        background-color: #f5f5f5;
+    }
+}
