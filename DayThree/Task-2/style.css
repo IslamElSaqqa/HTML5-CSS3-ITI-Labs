@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px 40px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:invalid,
+input[type="email"]:invalid {
+    border-color: #dc3545;
+}
+
+input[type="text"]:valid,
+input[type="email"]:valid {
+    border-color: #007bff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #007bff;
+}
+
+.helper-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+input:invalid + .helper-text {
+    color: #dc3545;
+}
+
+input:valid + .helper-text {
+    color: #666;
+}
+
+input::placeholder {
+    color: #999;
+    opacity: 0.7;
+}
+
+button {
+    padding: 10px 25px;
+    background-color: #f0f0f0;
+    border: 1px solid #999;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+input:invalid:not(:placeholder-shown)::before {
+    content: "⚠️";
+}
+
+input:required:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #dc3545;
+    background-color: #fff5f5;
+}

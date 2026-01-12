@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2 - Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Change Email Address</h2>
+        <form>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    pattern="[a-zA-Z0-9]{3,}" 
+                    required
+                    placeholder="Enter username">
+                <span class="helper-text">The required user name may only be a series of alphabetical characters.</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    placeholder="Enter email">
+                <span class="helper-text">The required email address may not include any special characters other than the @ sign.</span>
+            </div>
+            
+            <button type="submit">Change</button>
+        </form>
+    </div>
+</body>
+</html>
